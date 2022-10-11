@@ -1,15 +1,20 @@
 package sample.actuator;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-public class HelloWorldServiceTest {
+import static org.junit.Assert.assertEquals;
 
-	@Test
-	public void expectedMessage() {
-		HelloWorldService helloWorldService = new HelloWorldService();
-		assertEquals("Expected correct message","Spring boot says hello from a Docker container",helloWorldService.getHelloMessage());
-	}
-	
+public class HelloWorldServiceTest {
+    @Test
+    public void expectedMessage() {
+        HelloWorldService service = new HelloWorldService();
+        assertEquals("Expected correct message", "Hola Hola", service.getHelloMessage());
+    }
+
+    @Test
+    public void secondMessageCall() {
+        HelloWorldService service = new HelloWorldService();
+        assertEquals("Hola Hola", "Hola Hola", service.getHelloMessage());
+        assertEquals("Hello Hello", "Hello Hello", service.getHelloMessage());
+    }
 }

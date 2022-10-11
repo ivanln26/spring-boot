@@ -9,13 +9,13 @@ import org.springframework.boot.actuate.info.Info;
 
 public class ExampleInfoContributorTest {
 
-	@Test
-	public void infoMap() {
-		Info.Builder builder = mock(Info.Builder.class);
-		
-		ExampleInfoContributor exampleInfoContributor = new ExampleInfoContributor();
-		exampleInfoContributor.contribute(builder);
-		
-		verify(builder).withDetail(any(),any());
-	}
+    @Test
+    public void infoMap() {
+        Info.Builder builder = mock(Info.Builder.class);
+
+        ExampleInfoContributor exampleInfoContributor = new ExampleInfoContributor();
+        exampleInfoContributor.contribute(builder);
+
+        verify(builder).withDetail(any(), any());
+    }
 }
